@@ -1,7 +1,7 @@
 import { NotionRenderer } from "react-notion";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
-import { getAllPosts } from './'
+import { getAllPosts } from '..'
 
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
@@ -33,7 +33,7 @@ export default ({ blocks }) => (
 export async function getStaticPaths() {
     const posts = await getAllPosts();
     return {
-      paths: posts.map((row) => `/${row.slug}`),
+      paths: posts.map((row) => `/blog/${row.slug}`),
       fallback: true,
     };
   }

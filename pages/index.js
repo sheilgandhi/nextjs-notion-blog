@@ -26,7 +26,7 @@ function Home({ posts }) {
       <Header />
       <h1 className="w-screen p-2">Welcome to my blog </h1>
       {posts.map((post) => (
-        <Link key={post.id} href="/[slug]" as={`/${post.slug}`}>
+        <Link key={post.id} href="/blog/[slug]" as={`/blog/${post.slug}`}>
           <div className="flex flex-row">
             <PostCard key={post.id} post={post} />
           </div>
