@@ -2,7 +2,7 @@ import Header from "../components/Header"
 
 const opinion = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Header />
         </div>
     )

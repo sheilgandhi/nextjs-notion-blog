@@ -2,7 +2,7 @@ import Header from "../components/Header"
 
 const tech = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Header />
         </div>
     )
