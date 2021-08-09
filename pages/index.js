@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-function Home({ posts }) {
+const Home = ({ posts }) => {
   return (
     <div className="flex flex-wrap bg-gray-100 overflow-x-hidden">
       <Header />

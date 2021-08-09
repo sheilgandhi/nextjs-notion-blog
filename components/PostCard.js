@@ -1,4 +1,7 @@
 function PostCard({ post }){
+    const tags = post.tag;
+    // console.log(tags)
+
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer m-2">
             <img className="w-vw object-contain" src={post.image} alt={post.title} />
@@ -8,7 +11,12 @@ function PostCard({ post }){
                 </p> */}
             </div>
             <div className="px-6 pb-2">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{post.tag}</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tags[0]}</span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tags[1]}</span>
+                {
+                    tags[2] &&
+                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tags[2]}</span>
+                }
             </div>
         </div>
     );

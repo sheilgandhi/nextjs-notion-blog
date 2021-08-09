@@ -21,7 +21,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default ({ blocks }) => (
-    <div className="">
+    <div className="overflow-x-hidden">
         <Header />
         <div className="relative max-w-lg mx-auto lg:max-w-7xl" style={{ maxWidth: 768 }}>
             <NotionRenderer blockMap={blocks} />
