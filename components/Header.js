@@ -28,10 +28,10 @@ function Header() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                         <div className="font-medium text-lg mt-10 cursor-pointer">
-                            <p className="mx-5 py-2 border-b-2 border-gray-200">Technology</p>
-                            <p className="mx-5 py-2 border-b-2 border-gray-200">Cricket</p>
-                            <p className="mx-5 py-2 border-b-2 border-gray-200">Opinion</p>
-                            <p className="mx-5 py-2 border-b-2 border-gray-200">Books</p>
+                            <Link href="/tech"><p className="mx-5 py-2 border-b-2 border-gray-200">Technology</p></Link>
+                            <Link href="/cricket"><p className="mx-5 py-2 border-b-2 border-gray-200">Cricket</p></Link>
+                            <Link href="/opinion"><p className="mx-5 py-2 border-b-2 border-gray-200">Opinion</p></Link>
+                            <Link href="/books"><p className="mx-5 py-2 border-b-2 border-gray-200">Books</p></Link>
                         </div>
                     </div>  
                     :
