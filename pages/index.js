@@ -24,7 +24,13 @@ const Home = ({ posts }) => {
   return (
     <div className="flex flex-wrap bg-gray-100 overflow-x-hidden">
       <Header />
-      <h1 className="w-screen p-2">Welcome to my blog </h1>
+      <div className="w-screen p-2">
+        <h1 className="">Welcome to my blog </h1>
+        <blockquote className="border-l-2 border-gray-400 p-2">
+          <p>“You wasted $150,000 on an education you coulda got for a buck fifty in late charges at the public library.”</p>
+          <small><strong> - Will Hunting </strong> (played by Matt Damon), <em>Good Will Hunting </em></small>
+        </blockquote>
+      </div>
       {posts.map((post) => (
         <Link key={post.id} href="/blog/[slug]" as={`/blog/${post.slug}`}>
           <div className="flex flex-row">
