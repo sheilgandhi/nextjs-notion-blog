@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
 const Home = ({ posts }) => {
   return (
-    <div className="flex flex-wrap bg-gray-100 overflow-x-hidden">
+    <div className="flex flex-wrap overflow-x-hidden">
       <Header />
       <div className="w-screen p-2">
         <h1 className="">Welcome to my blog </h1>
