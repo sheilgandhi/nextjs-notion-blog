@@ -1,5 +1,6 @@
 import { NotionRenderer } from "react-notion";
 import Header from "../../components/Header";
+import Head from 'next/head'
 
 import { getAllPosts } from '..'
 
@@ -20,10 +21,14 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default ({ blocks }) => (
+export default ({ blocks, post }) => (
     <div className="overflow-x-hidden">
+      <Head>
+        <title>{post.title}</title>
+      </Head>
         <Header />
         <div className="relative p-3 max-w-lg mx-auto lg:max-w-7xl" style={{ maxWidth: 768 }}>
+            <p>{post.date}</p>
             <NotionRenderer blockMap={blocks} />
         </div>
     </div>

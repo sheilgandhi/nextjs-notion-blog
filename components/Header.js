@@ -1,12 +1,24 @@
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function Header() {
     const [visible, setVisible] = useState(false)
+    const [show, handleShow] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if(window.scrollY > 50){
+                handleShow(true)
+            } else handleShow(false);
+        });
+        return () => {
+            window.removeEventListener("scroll", null);
+        };
+    }, [])
 
     return (
-        <div className="w-screen bg-gray-100 p-3 flex items-center justify-between md:justify-evenly space-x-3">
+        <div className={`sticky top-0 w-screen p-3 flex items-center justify-between md:justify-evenly space-x-3 overflow-x-hidden ${show && "border-b-1 bg-white"}`}>
             <div className="flex-start cursor-pointer md:pt-5">
                 <Link href="/">
                     <Image src="/logo.png" alt="me" width={163} height={30} />

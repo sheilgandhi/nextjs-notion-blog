@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import PostCard from "../components/PostCard";
+import Head from 'next/head'
 
 const NOTION_BLOG_ID = 'a6965701f4944000baf22e3beb54ee9f'
 
@@ -22,11 +23,14 @@ export async function getStaticProps() {
 
 const Home = ({ posts }) => {
   return (
-    <div className="flex flex-wrap overflow-x-hidden">
+    <div className="bg-white flex flex-wrap overflow-x-hidden items-center justify-center pb-4">
+      <Head>
+        <title>The Cricketers Corner</title>
+      </Head>
       <Header />
-      <div className="w-screen p-2">
-        <h1 className="">Welcome to my blog </h1>
-        <blockquote className="border-l-2 border-gray-400 p-2">
+      <div className="w-screen flex flex-col items-center justify-center m-10">
+        <h1 className="text-5xl font-bold drop-shadow-sm">The Cricketers Corner 🏏</h1>
+        <blockquote className="drop-shadow-sm text-gray-500 py-4">
           <p>“You wasted $150,000 on an education you coulda got for a buck fifty in late charges at the public library.”</p>
           <small><strong> - Will Hunting </strong> (played by Matt Damon), <em>Good Will Hunting </em></small>
         </blockquote>
