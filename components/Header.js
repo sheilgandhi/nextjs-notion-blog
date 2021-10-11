@@ -18,10 +18,13 @@ function Header() {
     }, [])
 
     return (
-        <div className={`sticky top-0 w-screen p-3 flex items-center justify-between md:justify-evenly space-x-3 overflow-x-hidden ${show && "border-b-1 bg-white"}`}>
+        <div className={`relative top-0 w-screen[-100px] p-3 flex items-center justify-between md:justify-evenly space-x-3 overflow-x-hidden bg-white ${show && "border-b-1"}`}>
             <div className="flex-start cursor-pointer md:pt-5">
                 <Link href="/">
-                    <Image src="/logo.png" alt="me" width={163} height={30} />
+                    {
+                        visible ? <p>🏏</p> :
+                        <Image src="/logo.png" alt="me" width={163} height={30} />
+                    }
                 </Link>
             </div>
             {/* Computer Size */}
@@ -32,10 +35,10 @@ function Header() {
                 <Link href="/books"><p className="px-5">Books</p></Link>
             </div>
             {/* Tablet */}
-            <div className="inline-flex md:hidden">
+            <div className="inline-flex bg-white md:hidden">
                 {
                     visible ?
-                    <div className="fixed top-0 right-0 bottom-0 z-10 bg-white w-72 h-screen"> {/* X */}
+                    <div className="relative top-0 right-0 bottom-0 w-72"> {/* X */}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer absolute top-3 right-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={() => setVisible(!visible)}>
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>

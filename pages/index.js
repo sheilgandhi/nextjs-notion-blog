@@ -27,7 +27,6 @@ const Home = ({ posts }) => {
       <Head>
         <title>The Cricketers Corner</title>
       </Head>
-      <Header />
       <div className="w-screen flex flex-col items-center justify-center m-10">
         <h1 className="text-5xl font-bold drop-shadow-sm">The Cricketers Corner 🏏</h1>
         <blockquote className="drop-shadow-sm text-gray-500 py-4">

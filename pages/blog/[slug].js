@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Head from 'next/head'
 
 import { getAllPosts } from '..'
+import moment from "moment";
 
 export async function getStaticProps({ params: { slug } }) {
   // Get all posts again
@@ -26,9 +27,9 @@ export default ({ blocks, post }) => (
       <Head>
         <title>{post.title}</title>
       </Head>
-        <Header />
         <div className="relative p-3 max-w-lg mx-auto lg:max-w-7xl" style={{ maxWidth: 768 }}>
-            <p>{post.date}</p>
+            <h1 className="font-bold text-5xl pb-1">{post.title}</h1>
+            <p><span className="text-green-800">Sheil Gandhi </span> - {moment(new Date(post.date)).format('MMMM D Y')}</p>
             <NotionRenderer blockMap={blocks} />
         </div>
     </div>
